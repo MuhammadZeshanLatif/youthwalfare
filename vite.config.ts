@@ -11,6 +11,9 @@ const __dirname = path.dirname(__filename);
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), viteSingleFile()],
+  build: {
+    assetsInlineLimit: 65536, // logo (64KB tak) bundle mein inline → Hostinger par bina alag image file ke dikhega
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),

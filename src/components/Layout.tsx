@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { SITE } from '../data/siteData';
+import logoUrl from '../assets/ynlogo.webp';
 
 export function Layout() {
   const currentYear = new Date().getFullYear();
@@ -58,7 +59,7 @@ export function Layout() {
       <nav className="navbar navbar-expand-lg ngo-navbar sticky-top py-3">
         <div className="container">
           <NavLink className="navbar-brand d-flex align-items-center gap-3" to="/">
-            <img src="/images/ynlogo.webp" alt={SITE.name} className="navbar-logo" />
+            <img src={logoUrl} alt={SITE.name} className="navbar-logo" />
           </NavLink>
 
           <button
@@ -108,7 +109,7 @@ export function Layout() {
           <div className="row g-4">
             <div className="col-lg-4">
               <div className="d-flex align-items-center gap-3 mb-3">
-                <img src="/images/ynlogo.webp" alt={SITE.name} className="footer-logo" />
+                <img src={logoUrl} alt={SITE.name} className="footer-logo" />
                 {/* <div className="brand-copy footer-brand-copy">
                   <small>{SITE.footerTagline}</small>
                   <strong>{SITE.name}</strong>
