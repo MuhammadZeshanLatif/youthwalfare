@@ -168,9 +168,12 @@ h6,
 }
 
 .btn-primary-ngo:hover,
-.btn-primary-ngo:focus {
+.btn-primary-ngo:focus,
+.btn-primary-ngo:active {
+  background: #1a7fd9;
   color: #fff;
-  opacity: 0.95;
+  border-color: transparent;
+  box-shadow: 0 14px 34px rgba(33, 140, 238, 0.25);
 }
 
 .btn-outline-ngo {
@@ -183,10 +186,11 @@ h6,
 }
 
 .btn-outline-ngo:hover,
-.btn-outline-ngo:focus {
-  background: #218cee;
+.btn-outline-ngo:focus,
+.btn-outline-ngo:active {
+  background: #1a7fd9;
   color: #fff;
-  border-color: #218cee;
+  border-color: #1a7fd9;
 }
 
 .hero-section {
