@@ -1,9 +1,7 @@
 # Dependencies
 node_modules/
 
-# Build output
-dist/
-build/
+
 *.local
 
 # Environment
