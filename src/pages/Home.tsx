@@ -22,7 +22,7 @@ export function Home() {
             <div className="col-lg-6 mt-0">
               <div className="hero-badge">
                 <i className="bi bi-stars"></i>
-                <span>Helping humanity with food, care, and compassion</span>
+                <span>Helping humanity with food, care and compassion</span>
               </div>
               <h1 className="hero-title">Hope, healing, and dignity for every struggling life.</h1>
               <p className="hero-text">
