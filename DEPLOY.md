@@ -1,5 +1,19 @@
 # GitHub + Hostinger Deploy Guide
 
+## 0. GitHub Secrets (auto-deploy ke liye — ek baar set karo)
+
+Repo **Settings → Secrets and variables → Actions** mein jaakar ye 3 secrets add karo:
+
+| Secret name    | Value (copy-paste)           |
+|----------------|-----------------------------|
+| `FTP_HOST`     | `ftp.youthunitywelfare.org` |
+| `FTP_USERNAME` | `u398271634.youthwalfare`   |
+| `FTP_PASSWORD` | Apna FTP password (jo Hostinger pe set hai) |
+
+**FTP_PASSWORD** ko GitHub par paste karte waqt double-check karo — koi extra space na ho. Save ke baad push karo; sirf **dist** ka content Hostinger ke **public_html** mein jayega.
+
+---
+
 ## 1. GitHub par pura project push karna
 
 - **GitHub par sirf source code jayega** — `dist/` aur `public_html/` `.gitignore` mein hain, isliye push nahi honge.

@@ -1,29 +1,37 @@
+# Push to main → build → upload sirf dist/ ka content Hostinger public_html mein
+# GitHub repo Secrets mein add karo: FTP_HOST, FTP_USERNAME, FTP_PASSWORD
+
 name: Deploy to Hostinger
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm install
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
 
-      - name: Build project
-        run: npm run build
+      - name: Install and build
+        run: |
+          npm ci
+          npm run build
 
-      - name: Deploy via FTP
+      - name: Deploy dist to public_html (FTP)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
-          server: ftp.yourdomain.com
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          local-dir: dist/
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
           server-dir: public_html/
