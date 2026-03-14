@@ -2,7 +2,7 @@ export const SITE = {
   name: 'Youth Unity Welfare',
   domain: 'youthunitywelfare.org',
   tagline: 'Charity • Relief • Hope',
-  phone: '+13322524469',
+  phone: '+13322524459 ',
   address: '1001 S Main St. STE 11925, Kalispell, MT 59901, USA',
   addressShort: '1001 S Main St. STE 11925, Kalispell, MT 59901, USA',
   topStripText: 'Trusted humanitarian support for families, children, and communities',

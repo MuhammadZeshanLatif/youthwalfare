@@ -9,21 +9,48 @@ export function Layout() {
     <div className="ngo-page">
       <div className="top-strip py-2">
         <div className="container">
-          <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-2 text-center text-lg-start">
-            <div className="d-flex flex-column flex-md-row gap-2 gap-md-4 justify-content-center justify-content-lg-start">
-              <span>
-                <i className="bi bi-telephone-fill me-2"></i>
-                {SITE.phone}
-              </span>
-              <span>
-                <i className="bi bi-geo-alt-fill me-2"></i>
-                {SITE.address}
-              </span>
-            </div>
-            <span>
+          {/* Desktop: single row, no marquee */}
+          <div className="top-strip-desktop d-none d-lg-flex flex-nowrap justify-content-between align-items-center text-lg-start">
+            <span className="text-nowrap">
+              <i className="bi bi-telephone-fill me-2"></i>
+              {SITE.phone}
+            </span>
+            <span className="text-nowrap">
+              <i className="bi bi-geo-alt-fill me-2"></i>
+              {SITE.address}
+            </span>
+            <span className="text-nowrap">
               <i className="bi bi-heart-pulse-fill me-2"></i>
               {SITE.topStripText}
             </span>
+          </div>
+          {/* Mobile: single line marquee */}
+          <div className="top-strip-marquee-wrapper d-lg-none">
+            <div className="top-strip-marquee" aria-label="Contact and info">
+              <span className="top-strip-marquee-item">
+                <i className="bi bi-telephone-fill me-2"></i>{SITE.phone}
+              </span>
+              <span className="top-strip-marquee-sep">•</span>
+              <span className="top-strip-marquee-item">
+                <i className="bi bi-geo-alt-fill me-2"></i>{SITE.address}
+              </span>
+              <span className="top-strip-marquee-sep">•</span>
+              <span className="top-strip-marquee-item">
+                <i className="bi bi-heart-pulse-fill me-2"></i>{SITE.topStripText}
+              </span>
+              <span className="top-strip-marquee-sep" aria-hidden="true">•</span>
+              <span className="top-strip-marquee-item" aria-hidden="true">
+                <i className="bi bi-telephone-fill me-2"></i>{SITE.phone}
+              </span>
+              <span className="top-strip-marquee-sep" aria-hidden="true">•</span>
+              <span className="top-strip-marquee-item" aria-hidden="true">
+                <i className="bi bi-geo-alt-fill me-2"></i>{SITE.address}
+              </span>
+              <span className="top-strip-marquee-sep" aria-hidden="true">•</span>
+              <span className="top-strip-marquee-item" aria-hidden="true">
+                <i className="bi bi-heart-pulse-fill me-2"></i>{SITE.topStripText}
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -31,13 +58,7 @@ export function Layout() {
       <nav className="navbar navbar-expand-lg ngo-navbar sticky-top py-3">
         <div className="container">
           <NavLink className="navbar-brand d-flex align-items-center gap-3" to="/">
-            <span className="brand-icon">
-              <i className="bi bi-heart-fill"></i>
-            </span>
-            <span className="brand-copy">
-              <small>{SITE.tagline}</small>
-              <strong>{SITE.name}</strong>
-            </span>
+            <img src="/images/ynlogo.webp" alt={SITE.name} className="navbar-logo" />
           </NavLink>
 
           <button
@@ -87,13 +108,11 @@ export function Layout() {
           <div className="row g-4">
             <div className="col-lg-4">
               <div className="d-flex align-items-center gap-3 mb-3">
-                <span className="brand-icon">
-                  <i className="bi bi-heart-fill"></i>
-                </span>
-                <div className="brand-copy footer-brand-copy">
+                <img src="/images/ynlogo.webp" alt={SITE.name} className="footer-logo" />
+                {/* <div className="brand-copy footer-brand-copy">
                   <small>{SITE.footerTagline}</small>
                   <strong>{SITE.name}</strong>
-                </div>
+                </div> */}
               </div>
               <p className="footer-text">
                 A humanitarian organization dedicated to feeding poor families, arranging medical treatment

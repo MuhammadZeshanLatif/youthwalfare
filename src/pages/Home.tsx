@@ -19,7 +19,7 @@ export function Home() {
       <section className="hero-section" id="home">
         <div className="container">
           <div className="row align-items-center g-5">
-            <div className="col-lg-6">
+            <div className="col-lg-6 mt-0">
               <div className="hero-badge">
                 <i className="bi bi-stars"></i>
                 <span>Helping humanity with food, care, and compassion</span>
