@@ -1,13 +1,13 @@
-import { PageHeader } from '../components/PageHeader';
+// import { PageHeader } from '../components/PageHeader';
 import { faqItems } from '../data/siteData';
 
 export function FAQ() {
   return (
     <>
-      <PageHeader
+      {/* <PageHeader
         title="Frequently Asked Questions"
         subtitle="Answers about donations, services, volunteering, and outreach. To help donors, supporters, and community members, we have included answers to common questions about our NGO and its programs."
-      />
+      /> */}
       <section className="section-space bg-soft">
         <div className="container">
           <div className="row justify-content-center">
