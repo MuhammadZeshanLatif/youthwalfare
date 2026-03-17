@@ -12,6 +12,7 @@ import {
   galleryItems,
   faqItems,
 } from '../data/siteData';
+import donationImageUrl from '@/assets/donation.webp';
 
 export function Home() {
   return (
@@ -423,7 +424,7 @@ export function Home() {
                 <div className="donate-qr-block mt-4">
                   <p className="donate-qr-label mb-2">Or scan QR to donate via PayPal</p>
                   <img
-                    src="/images/donation.webp"
+                    src={donationImageUrl}
                     alt="Scan QR code to donate via PayPal"
                     className="donate-qr-image"
                   />
