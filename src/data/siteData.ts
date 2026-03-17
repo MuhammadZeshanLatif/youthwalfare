@@ -155,17 +155,17 @@ export const officers = [
   {
     name: 'Ahmed Hassan',
     role: 'President',
-    image: '/images/ahmed.webp',
+    image: '/images/team/ahmed.webp',
   },
   {
     name: 'Muhammad Farooq',
     role: 'Treasurer',
-    image: '/images/farooq-image.webp',
+    image: '/images/team/farooq-image.webp',
   },
   {
     name: 'Hafiz Muhammad Waqas',
     role: 'Secretary',
-    image: '/images/waqas.webp',
+    image: '/images/team/waqas.webp',
   },
 ];
 
