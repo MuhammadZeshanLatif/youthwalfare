@@ -29,6 +29,11 @@ jobs:
           npm ci
           npm run build
 
+      - name: Remove donation image from dist (avoid FTP 550)
+        run: |
+          rm -f ./dist/images/donation.webp
+          rm -f ./dist/images/donationQr.jpeg
+
       - name: Deploy dist to public_html (FTP)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
@@ -37,3 +42,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ./
+          exclude: |
+            **/donation.webp
+            **/donationQr.jpeg
