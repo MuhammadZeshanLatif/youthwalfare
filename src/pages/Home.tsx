@@ -35,7 +35,14 @@ export function Home() {
                 a disaster-hit community supported, and a future rebuilt with hope.
               </p>
               <div className="hero-actions">
-                <Link to="/contact" className="btn btn-primary-ngo btn-lg">Donate Now</Link>
+                <a
+                  href="https://www.paypal.com/donate/?hosted_button_id=X6TTVDKC537Y6"
+                  className="btn btn-primary-ngo btn-lg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Donate Now
+                </a>
                 <Link to="/contact" className="btn btn-outline-ngo btn-lg">Become Volunteer</Link>
               </div>
 
@@ -404,7 +411,14 @@ export function Home() {
                 </p>
               </div>
               <div className="col-lg-4 text-lg-end">
-                <Link to="/contact" className="btn btn-light btn-lg rounded-pill px-4 me-2 mb-2">Donate Today</Link>
+                <a
+                  href="https://www.paypal.com/donate/?hosted_button_id=X6TTVDKC537Y6"
+                  className="btn btn-light btn-lg rounded-pill px-4 me-2 mb-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Donate Today
+                </a>
                 <Link to="/services" className="btn btn-outline-light btn-lg rounded-pill px-4 mb-2">View Programs</Link>
               </div>
             </div>

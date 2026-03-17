@@ -95,7 +95,14 @@ export function Layout() {
                 <NavLink className="nav-link" to="/contact">Contact</NavLink>
               </li>
             </ul>
-            <NavLink to="/contact" className="btn btn-primary-ngo">Donate Now</NavLink>
+            <a
+              href="https://www.paypal.com/donate/?hosted_button_id=X6TTVDKC537Y6"
+              className="btn btn-primary-ngo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Donate Now
+            </a>
           </div>
         </div>
       </nav>
