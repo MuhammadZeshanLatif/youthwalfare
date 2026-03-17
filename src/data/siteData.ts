@@ -151,22 +151,21 @@ export const workSteps = [
   },
 ];
 
-// Team images: public/images/team/ folder mein rakhein (build par dist/images/team/ mein copy honge)
 export const officers = [
   {
     name: 'Ahmed Hassan',
     role: 'President',
-    image: '/images/team/ahmed.webp',
+    image: '/images/ahmed.webp',
   },
   {
     name: 'Muhammad Farooq',
     role: 'Treasurer',
-    image: '/images/team/farooq-image.webp',
+    image: '/images/farooq-image.webp',
   },
   {
     name: 'Hafiz Muhammad Waqas',
     role: 'Secretary',
-    image: '/images/team/waqas.webp',
+    image: '/images/waqas.webp',
   },
 ];
 
