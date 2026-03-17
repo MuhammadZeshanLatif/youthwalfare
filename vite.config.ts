@@ -3,16 +3,15 @@ import { fileURLToPath } from "url";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import { viteSingleFile } from "vite-plugin-singlefile";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), viteSingleFile()],
+  plugins: [react(), tailwindcss()],
   build: {
-    assetsInlineLimit: 65536, // logo (64KB tak) bundle mein inline → Hostinger par bina alag image file ke dikhega
+    assetsInlineLimit: 65536,
   },
   resolve: {
     alias: {
