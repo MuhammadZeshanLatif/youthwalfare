@@ -420,6 +420,14 @@ export function Home() {
                   Donate Today
                 </a>
                 <Link to="/services" className="btn btn-outline-light btn-lg rounded-pill px-4 mb-2">View Programs</Link>
+                <div className="donate-qr-block mt-4">
+                  <p className="donate-qr-label mb-2">Or scan QR to donate via PayPal</p>
+                  <img
+                    src="/images/donationQr.jpeg"
+                    alt="Scan QR code to donate via PayPal"
+                    className="donate-qr-image"
+                  />
+                </div>
               </div>
             </div>
           </div>

@@ -706,6 +706,28 @@ h6,
   line-height: 1.8;
 }
 
+.donate-qr-block {
+  display: inline-block;
+  text-align: center;
+}
+
+.donate-qr-label {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.donate-qr-image {
+  display: block;
+  margin: auto;
+  max-width: 140px;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
 .testimonial-card {
   padding: 1.8rem;
 }
@@ -877,6 +899,29 @@ h6,
 .footer-contact i {
   color: var(--ngo-orange);
   margin-top: 0.2rem;
+}
+
+.footer-donate-qr {
+  padding-top: 0.5rem;
+}
+
+.footer-donate-qr h5 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-qr-text {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 260px;
+  line-height: 1.4;
+}
+
+.footer-qr-image {
+  display: block;
+  max-width: 140px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .footer-bottom {
