@@ -12,7 +12,7 @@ import {
   galleryItems,
   faqItems,
 } from '../data/siteData';
-import donationImageUrl from '../assets/donation.jpeg';
+import donationImageUrl from '../assets/donation.webp';
 
 export function Home() {
   return (
