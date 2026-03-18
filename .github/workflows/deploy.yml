@@ -12,8 +12,6 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,18 +19,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "20"
           cache: "npm"
 
       - name: Install and build
         run: |
           npm ci
           npm run build
-
-      - name: Remove donation image from dist (avoid FTP 550)
-        run: |
-          rm -f ./dist/images/donation.webp
-          rm -f ./dist/images/donationQr.jpeg
 
       - name: Deploy dist to public_html (FTP)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
@@ -42,6 +35,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ./
-          exclude: |
-            **/donation.webp
-            **/donationQr.jpeg

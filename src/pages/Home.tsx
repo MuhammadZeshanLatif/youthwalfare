@@ -12,6 +12,7 @@ import {
   galleryItems,
   faqItems,
 } from '../data/siteData';
+import donationQrUrl from '@/assets/donation.webp';
 
 export function Home() {
   return (
@@ -303,10 +304,24 @@ export function Home() {
                     <div className="progress soft-progress mb-3">
                       <div className="progress-bar" style={{ width: `${cause.progress}%` }}></div>
                     </div>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <strong>{cause.progress}% Funded</strong>
-                      <Link to="/contact" className="btn btn-sm btn-primary-ngo">Support Cause</Link>
-                    </div>
+                    {cause.title === 'Children Medical Support' ? (
+                      <div className="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2">
+                        <strong>{cause.progress}% Funded</strong>
+                        <a
+                          href="https://www.paypal.com/donate/?hosted_button_id=X6TTVDKC537Y6"
+                          className="btn btn-sm btn-primary-ngo"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Donate for Children
+                        </a>
+                      </div>
+                    ) : (
+                      <div className="d-flex justify-content-between align-items-center">
+                        <strong>{cause.progress}% Funded</strong>
+                        <Link to="/contact" className="btn btn-sm btn-primary-ngo">Support Cause</Link>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -420,6 +435,14 @@ export function Home() {
                   Donate Today
                 </a>
                 <Link to="/services" className="btn btn-outline-light btn-lg rounded-pill px-4 mb-2">View Programs</Link>
+                <div className="donate-qr-block mt-4">
+                  <p className="donate-qr-label mb-2">Or scan QR to donate via PayPal</p>
+                  <img
+                    src={donationQrUrl}
+                    alt="Scan QR code to donate via PayPal"
+                    className="donate-qr-image"
+                  />
+                </div>
               </div>
             </div>
           </div>
