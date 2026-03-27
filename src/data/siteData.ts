@@ -73,7 +73,7 @@ export const serviceCards = [
 
 export const causes = [
   {
-    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/youth-unity/youth-unity%20(130).jpeg',
     title: 'Feeding Hungry Families',
     description:
       'A sustained food support campaign focused on families who struggle to afford daily meals, groceries, and basic household essentials.',
@@ -82,7 +82,7 @@ export const causes = [
     progress: 74,
   },
   {
-    image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/youth-unity/youth-unity%20(140).jpeg',
     title: 'Children Medical Support',
     description:
       'Helping children receive treatment, medicine, and follow-up care so they can recover with dignity and hope.',
@@ -91,7 +91,7 @@ export const causes = [
     progress: 75,
   },
   {
-    image: 'https://images.unsplash.com/photo-1518398046578-8cca57782e17?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/youth-unity/youth-unity%20(150).jpeg',
     title: 'Winter Relief For Poor Families',
     description:
       'Providing blankets, warm clothing, food support, and emergency assistance during harsh weather and seasonal hardship.',
@@ -192,28 +192,28 @@ export const testimonials = [
 
 export const galleryItems = [
   {
-    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80',
+    image: '/images/youth-unity/youth-unity%20(70).jpeg',
     title: 'Food Distribution Drive',
   },
   {
-    image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=900&q=80',
-    title: 'Medical Camp For Children',
+    image: '/images/youth-unity/youth-unity%20(80).jpeg',
+    title: 'Ration Distribution Event',
   },
   {
-    image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=900&q=80',
+    image: '/images/youth-unity/youth-unity%20(90).jpeg',
     title: 'Community Support Outreach',
   },
   {
-    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80',
-    title: 'Education Support Program',
+    image: '/images/youth-unity/youth-unity%20(100).jpeg',
+    title: 'Food Relief Program',
   },
   {
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80',
-    title: 'Women Empowerment Session',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80',
+    image: '/images/youth-unity/youth-unity%20(110).jpeg',
     title: 'Volunteer Relief Activity',
+  },
+  {
+    image: '/images/youth-unity/youth-unity%20(120).jpeg',
+    title: 'Humanitarian Aid Distribution',
   },
 ];
 

@@ -731,7 +731,9 @@ h6,
 .testimonial-card {
   padding: 1.8rem;
 }
-
+.floating-card {
+  z-index:5
+}
 .stars {
   color: #ffb300;
   display: flex;

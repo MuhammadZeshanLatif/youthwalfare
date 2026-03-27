@@ -14,6 +14,77 @@ import {
 } from '../data/siteData';
 import donationQrUrl from '@/assets/donation.webp';
 
+const serviceCarousels: Record<string, string[]> = {
+  'Food Distribution Programs': [
+    '/images/youth-unity/youth-unity%20(31).jpeg',
+    '/images/youth-unity/youth-unity%20(36).jpeg',
+    '/images/youth-unity/youth-unity%20(42).jpeg',
+  ],
+  'Children Medical Treatment': [
+    'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80',
+    'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=600&q=80',
+    'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=600&q=80',
+  ],
+  'Emergency Aid': [
+    'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=600&q=80',
+    'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80',
+    'https://images.unsplash.com/photo-1469571486292-b53601020f36?auto=format&fit=crop&w=600&q=80',
+  ],
+  'Education Support': [
+    'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80',
+    'https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=600&q=80',
+    'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80',
+  ],
+};
+
+const serviceSections = [
+  {
+    id: 'sec-food',
+    tag: 'Food Distribution Programs',
+    heading: 'Feeding hungry families with daily meals and ration packs.',
+    description: 'Our food distribution drives reach thousands of families across Pakistan — delivering cooked meals, dry ration packs, and emergency food supplies to those who need it most.',
+    bgSoft: false,
+    slides: [
+      { images: ['/images/youth-unity/youth-unity%20(10).jpeg', '/images/youth-unity/youth-unity%20(11).jpeg', '/images/youth-unity/youth-unity%20(12).jpeg'], caption: 'Food distribution to families in need' },
+      { images: ['/images/youth-unity/youth-unity%20(13).jpeg', '/images/youth-unity/youth-unity%20(14).jpeg', '/images/youth-unity/youth-unity%20(15).jpeg'], caption: 'Ration packs delivered to underprivileged communities' },
+      { images: ['/images/youth-unity/youth-unity%20(16).jpeg', '/images/youth-unity/youth-unity%20(17).jpeg', '/images/youth-unity/youth-unity%20(18).jpeg'], caption: 'Hot meals served during humanitarian drives' },
+    ],
+  },
+  {
+    id: 'sec-medical',
+    tag: 'Children Medical Treatment',
+    heading: 'Providing life-saving medical care to vulnerable children.',
+    description: 'From specialist consultations to medicines and follow-up care, we ensure no child is denied treatment due to poverty or lack of access.',
+    bgSoft: true,
+    slides: [
+      { images: ['https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=700&q=80'], caption: 'Medical camps and health screenings for children' },
+      { images: ['https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=700&q=80'], caption: 'Specialist treatment and medicines for sick children' },
+    ],
+  },
+  {
+    id: 'sec-emergency',
+    tag: 'Emergency Aid',
+    heading: 'Rapid relief when communities face crisis and hardship.',
+    description: 'In urgent situations, our teams mobilize quickly to deliver emergency supplies, temporary support, and humanitarian assistance to affected families and communities.',
+    bgSoft: false,
+    slides: [
+      { images: ['https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=700&q=80', '/images/youth-unity/youth-unity%20(55).jpeg'], caption: 'Emergency aid distribution to families in crisis' },
+      { images: ['https://images.unsplash.com/photo-1518398046578-8cca57782e17?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=700&q=80'], caption: 'Volunteers delivering urgent relief and support' },
+    ],
+  },
+  {
+    id: 'sec-education',
+    tag: 'Education Support',
+    heading: 'Opening doors to learning for children in need.',
+    description: 'We provide school supplies, scholarships, mentoring, and education support so every child — regardless of family income — can continue learning and build a better future.',
+    bgSoft: true,
+    slides: [
+      { images: ['https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=700&q=80'], caption: 'Education support and school supplies for poor children' },
+      { images: ['https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=700&q=80'], caption: 'Mentoring and learning programs for underprivileged children' },
+    ],
+  },
+];
+
 export function Home() {
   return (
     <>
@@ -76,11 +147,45 @@ export function Home() {
             <div className="col-lg-6">
               <div className="hero-visual">
                 <div className="hero-image-wrap">
-                  <img
-                    src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1400&q=80"
-                    alt="Humanitarian aid and children support"
-                    className="hero-main-image"
-                  />
+                  <div
+                    id="heroCarousel"
+                    className="carousel slide carousel-fade hero-main-image"
+                    data-bs-ride="carousel"
+                    data-bs-interval="3500"
+                  >
+                    <div className="carousel-indicators">
+                      {[0, 1, 2, 3].map((i) => (
+                        <button
+                          key={i}
+                          type="button"
+                          data-bs-target="#heroCarousel"
+                          data-bs-slide-to={i}
+                          className={i === 0 ? 'active' : ''}
+                          aria-label={`Slide ${i + 1}`}
+                        />
+                      ))}
+                    </div>
+                    <div className="carousel-inner h-100">
+                      {[1, 2, 3, 4].map((n, i) => (
+                        <div key={n} className={`carousel-item h-100 ${i === 0 ? 'active' : ''}`}>
+                          <img
+                            src={`/images/youth-unity/youth-unity%20(${n}).jpeg`}
+                            alt={`Youth Unity food distribution activity ${n}`}
+                            className="d-block w-100 h-100"
+                            style={{ objectFit: 'cover', objectPosition: 'center' }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                      <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span className="visually-hidden">Next</span>
+                    </button>
+                  </div>
                 </div>
                 <div className="floating-card donation-note">
                   <div className="d-flex align-items-center gap-3">
@@ -163,8 +268,8 @@ export function Home() {
             <div className="col-lg-6">
               <div className="about-media">
                 <img
-                  src="https://images.unsplash.com/photo-1518398046578-8cca57782e17?auto=format&fit=crop&w=1200&q=80"
-                  alt="Volunteers serving the community"
+                  src="/images/youth-unity/youth-unity%20(50).jpeg"
+                  alt="Youth Unity welfare food distribution activity"
                   className="about-image"
                 />
               </div>
@@ -251,7 +356,79 @@ export function Home() {
         </div>
       </section>
 
-      <section className="section-space" id="services">
+      {serviceSections.map((sec) => (
+        <section key={sec.id} className={`section-space${sec.bgSoft ? ' bg-soft' : ''}`}>
+          <div className="container">
+            <div className="text-center section-header">
+              <div className="section-tag mx-auto">{sec.tag}</div>
+              <h2 className="section-heading text-center">{sec.heading}</h2>
+              <p className="section-lead text-center mx-auto">{sec.description}</p>
+            </div>
+
+            <div
+              id={sec.id}
+              className="carousel slide mt-4"
+              data-bs-ride="carousel"
+              data-bs-interval="4000"
+            >
+              <div className="carousel-indicators">
+                {sec.slides.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    data-bs-target={`#${sec.id}`}
+                    data-bs-slide-to={i}
+                    className={i === 0 ? 'active' : ''}
+                    aria-label={`Slide ${i + 1}`}
+                  />
+                ))}
+              </div>
+
+              <div className="carousel-inner">
+                {sec.slides.map((slide, i) => (
+                  <div key={i} className={`carousel-item ${i === 0 ? 'active' : ''}`}>
+                    <div className="row g-3">
+                      {slide.images.map((src) => (
+                        <div key={src} className="col-12 col-md-4">
+                          <img
+                            src={src}
+                            alt={sec.tag}
+                            className="d-block w-100 rounded"
+                            style={{ height: '280px', objectFit: 'cover', objectPosition: 'top' }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <div className="text-center mt-3">
+                      <p className="text-muted mb-0">
+                        <i className="bi bi-geo-alt-fill me-1" style={{ color: 'var(--ngo-green)' }}></i>
+                        {slide.caption}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <button className="carousel-control-prev" type="button" data-bs-target={`#${sec.id}`} data-bs-slide="prev"
+                style={{ width: '40px', left: '-50px' }}>
+                <span className="carousel-control-prev-icon" style={{ filter: 'invert(1) sepia(1) saturate(5) hue-rotate(175deg)' }} aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button className="carousel-control-next" type="button" data-bs-target={`#${sec.id}`} data-bs-slide="next"
+                style={{ width: '40px', right: '-50px' }}>
+                <span className="carousel-control-next-icon" style={{ filter: 'invert(1) sepia(1) saturate(5) hue-rotate(175deg)' }} aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </button>
+            </div>
+
+            <div className="text-center mt-4">
+              <Link to="/services" className="btn btn-primary-ngo">Learn More</Link>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      <section className="section-space bg-soft" id="services">
         <div className="container">
           <div className="text-center section-header">
             <div className="section-tag mx-auto">Our Services</div>
@@ -263,18 +440,45 @@ export function Home() {
           </div>
 
           <div className="row g-4 mt-2">
-            {serviceCards.slice(0, 3).map((service) => (
-              <div className="col-md-6 col-xl-4" key={service.title}>
-                <div className="service-card h-100">
-                  <ServiceIcon title={service.title} />
-                  <h4>{service.title}</h4>
-                  <p>{service.description}</p>
-                  <Link to="/services" className="service-link">
-                    Learn More <i className="bi bi-arrow-right"></i>
-                  </Link>
+            {serviceCards.slice(0, 4).map((service, idx) => {
+              const carouselId = `svcCarousel${idx}`;
+              const imgs = serviceCarousels[service.title] ?? ['/images/youth-unity/youth-unity%20(35).jpeg'];
+              return (
+                <div className="col-md-6 col-xl-3" key={service.title}>
+                  <div className="service-card h-100" style={{ padding: 0, overflow: 'hidden' }}>
+                    <div id={carouselId} className="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style={{ height: '200px' }}>
+                      <div className="carousel-inner h-100">
+                        {imgs.map((src, i) => (
+                          <div key={i} className={`carousel-item h-100 ${i === 0 ? 'active' : ''}`}>
+                            <img
+                              src={src}
+                              alt={service.title}
+                              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                      <button className="carousel-control-prev" type="button" data-bs-target={`#${carouselId}`} data-bs-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Previous</span>
+                      </button>
+                      <button className="carousel-control-next" type="button" data-bs-target={`#${carouselId}`} data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                    <div style={{ padding: '1.5rem' }}>
+                      <ServiceIcon title={service.title} />
+                      <h4>{service.title}</h4>
+                      <p>{service.description}</p>
+                      <Link to="/services" className="service-link">
+                        Learn More <i className="bi bi-arrow-right"></i>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
           <div className="text-center mt-4">
             <Link to="/services" className="btn btn-primary-ngo">View All Services</Link>
@@ -282,7 +486,7 @@ export function Home() {
         </div>
       </section>
 
-      <section className="section-space bg-soft" id="causes">
+      <section className="section-space" id="causes">
         <div className="container">
           <div className="text-center section-header">
             <div className="section-tag mx-auto">Featured Causes</div>
@@ -330,7 +534,7 @@ export function Home() {
         </div>
       </section>
 
-      <section className="section-space">
+      <section className="section-space bg-soft">
         <div className="container">
           <div className="row align-items-start g-4">
             <div className="col-lg-5">
@@ -358,7 +562,7 @@ export function Home() {
         </div>
       </section>
 
-      <section className="section-space leadership-section bg-soft" id="leadership">
+      <section className="section-space leadership-section" id="leadership">
         <div className="container">
           <div className="text-center section-header">
             <div className="section-tag mx-auto">Officers / Leadership Team</div>
@@ -388,7 +592,7 @@ export function Home() {
         </div>
       </section>
 
-      <section className="section-space volunteer-section" id="volunteer">
+      <section className="section-space volunteer-section bg-soft" id="volunteer">
         <div className="container">
           <div className="row align-items-center g-5">
             <div className="col-lg-6 order-2 order-lg-1">
@@ -403,8 +607,8 @@ export function Home() {
             <div className="col-lg-6 order-1 order-lg-2">
               <div className="volunteer-media">
                 <img
-                  src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80"
-                  alt="Volunteer community support"
+                  src="/images/youth-unity/youth-unity%20(60).jpeg"
+                  alt="Youth Unity volunteers serving the community"
                   className="volunteer-image"
                 />
               </div>
