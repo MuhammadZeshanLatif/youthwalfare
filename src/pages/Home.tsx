@@ -45,7 +45,7 @@ const serviceSections = [
     description: 'Our food distribution drives reach thousands of families across Pakistan — delivering cooked meals, dry ration packs, and emergency food supplies to those who need it most.',
     bgSoft: false,
     slides: [
-      { images: ['/images/youth-unity/youth-unity%20(10).jpeg', '/images/youth-unity/youth-unity%20(11).jpeg', '/images/youth-unity/youth-unity%20(12).jpeg'], caption: 'Food distribution to families in need' },
+      { images: ['/images/youth-unity/food-section-1.png', '/images/youth-unity/food-section-2.png', '/images/youth-unity/food-section-3.png'], caption: 'Food distribution to families in need' },
       { images: ['/images/youth-unity/youth-unity%20(13).jpeg', '/images/youth-unity/youth-unity%20(14).jpeg', '/images/youth-unity/youth-unity%20(15).jpeg'], caption: 'Ration packs delivered to underprivileged communities' },
       { images: ['/images/youth-unity/youth-unity%20(16).jpeg', '/images/youth-unity/youth-unity%20(17).jpeg', '/images/youth-unity/youth-unity%20(18).jpeg'], caption: 'Hot meals served during humanitarian drives' },
     ],
@@ -57,8 +57,8 @@ const serviceSections = [
     description: 'From specialist consultations to medicines and follow-up care, we ensure no child is denied treatment due to poverty or lack of access.',
     bgSoft: true,
     slides: [
-      { images: ['https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=700&q=80'], caption: 'Medical camps and health screenings for children' },
-      { images: ['https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=700&q=80'], caption: 'Specialist treatment and medicines for sick children' },
+      { images: ['/images/youth-unity/medical-section-1.png', '/images/youth-unity/medical-section-2.png', '/images/youth-unity/medical-section-3.png'], caption: 'Medical camps and health screenings for children' },
+      { images: ['/images/youth-unity/medical-section-4.png', '/images/youth-unity/medical-section-5.png', '/images/youth-unity/medical-section-6.png'], caption: 'Specialist treatment and medicines for sick children' },
     ],
   },
   {
@@ -172,7 +172,7 @@ export function Home() {
                             src={`/images/youth-unity/youth-unity%20(${n}).jpeg`}
                             alt={`Youth Unity food distribution activity ${n}`}
                             className="d-block w-100 h-100"
-                            style={{ objectFit: 'cover', objectPosition: 'center' }}
+                            style={{ objectFit: 'contain', objectPosition: 'center', backgroundColor: '#f4f6f8' }}
                           />
                         </div>
                       ))}
@@ -394,7 +394,7 @@ export function Home() {
                             src={src}
                             alt={sec.tag}
                             className="d-block w-100 rounded"
-                            style={{ height: '280px', objectFit: 'cover', objectPosition: 'top' }}
+                            style={{ height: '360px', objectFit: 'contain', objectPosition: 'center', backgroundColor: '#f4f6f8' }}
                           />
                         </div>
                       ))}
@@ -446,14 +446,14 @@ export function Home() {
               return (
                 <div className="col-md-6 col-xl-3" key={service.title}>
                   <div className="service-card h-100" style={{ padding: 0, overflow: 'hidden' }}>
-                    <div id={carouselId} className="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style={{ height: '200px' }}>
+                    <div id={carouselId} className="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style={{ height: '260px' }}>
                       <div className="carousel-inner h-100">
                         {imgs.map((src, i) => (
                           <div key={i} className={`carousel-item h-100 ${i === 0 ? 'active' : ''}`}>
                             <img
                               src={src}
                               alt={service.title}
-                              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+                              style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', backgroundColor: '#f4f6f8', display: 'block' }}
                             />
                           </div>
                         ))}

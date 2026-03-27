@@ -73,7 +73,7 @@ export const serviceCards = [
 
 export const causes = [
   {
-    image: '/images/youth-unity/youth-unity%20(130).jpeg',
+    image: '/images/youth-unity/food-distribution-1.png',
     title: 'Feeding Hungry Families',
     description:
       'A sustained food support campaign focused on families who struggle to afford daily meals, groceries, and basic household essentials.',
@@ -192,15 +192,15 @@ export const testimonials = [
 
 export const galleryItems = [
   {
-    image: '/images/youth-unity/youth-unity%20(70).jpeg',
+    image: '/images/youth-unity/food-distribution-1.png',
     title: 'Food Distribution Drive',
   },
   {
-    image: '/images/youth-unity/youth-unity%20(80).jpeg',
+    image: '/images/youth-unity/food-distribution-2.png',
     title: 'Ration Distribution Event',
   },
   {
-    image: '/images/youth-unity/youth-unity%20(90).jpeg',
+    image: '/images/youth-unity/food-distribution-3.png',
     title: 'Community Support Outreach',
   },
   {
