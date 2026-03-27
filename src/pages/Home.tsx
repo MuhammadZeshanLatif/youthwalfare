@@ -235,8 +235,8 @@ export function Home() {
             <div className="col-lg-6">
               <div className="about-media">
                 <img
-                  src="/images/youth-unity/youth-unity%20(50).jpeg"
-                  alt="Youth Unity welfare food distribution activity"
+                  src="/images/youth-unity/about-charity-street.png"
+                  alt="Youth Unity volunteer distributing food on the street"
                   className="about-image"
                 />
               </div>
