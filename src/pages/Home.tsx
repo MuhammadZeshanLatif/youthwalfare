@@ -14,29 +14,6 @@ import {
 } from '../data/siteData';
 import donationQrUrl from '@/assets/donation.webp';
 
-const serviceCarousels: Record<string, string[]> = {
-  'Food Distribution Programs': [
-    '/images/youth-unity/youth-unity%20(31).jpeg',
-    '/images/youth-unity/youth-unity%20(36).jpeg',
-    '/images/youth-unity/youth-unity%20(42).jpeg',
-  ],
-  'Children Medical Treatment': [
-    'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=600&q=80',
-  ],
-  'Emergency Aid': [
-    'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1469571486292-b53601020f36?auto=format&fit=crop&w=600&q=80',
-  ],
-  'Education Support': [
-    'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80',
-  ],
-};
-
 const serviceSections = [
   {
     id: 'sec-food',
@@ -57,30 +34,8 @@ const serviceSections = [
     description: 'From specialist consultations to medicines and follow-up care, we ensure no child is denied treatment due to poverty or lack of access.',
     bgSoft: true,
     slides: [
-      { images: ['/images/youth-unity/medical-section-1.png', '/images/youth-unity/medical-section-2.png', '/images/youth-unity/medical-section-3.png'], caption: 'Medical camps and health screenings for children' },
+      { images: ['/images/youth-unity/medical-section-1.png', '/images/youth-unity/medical-section-2.png', '/images/youth-unity/medical-section-6.png'], caption: 'Medical camps and health screenings for children' },
       { images: ['/images/youth-unity/medical-section-4.png', '/images/youth-unity/medical-section-5.png', '/images/youth-unity/medical-section-6.png'], caption: 'Specialist treatment and medicines for sick children' },
-    ],
-  },
-  {
-    id: 'sec-emergency',
-    tag: 'Emergency Aid',
-    heading: 'Rapid relief when communities face crisis and hardship.',
-    description: 'In urgent situations, our teams mobilize quickly to deliver emergency supplies, temporary support, and humanitarian assistance to affected families and communities.',
-    bgSoft: false,
-    slides: [
-      { images: ['https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=700&q=80', '/images/youth-unity/youth-unity%20(55).jpeg'], caption: 'Emergency aid distribution to families in crisis' },
-      { images: ['https://images.unsplash.com/photo-1518398046578-8cca57782e17?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=700&q=80'], caption: 'Volunteers delivering urgent relief and support' },
-    ],
-  },
-  {
-    id: 'sec-education',
-    tag: 'Education Support',
-    heading: 'Opening doors to learning for children in need.',
-    description: 'We provide school supplies, scholarships, mentoring, and education support so every child — regardless of family income — can continue learning and build a better future.',
-    bgSoft: true,
-    slides: [
-      { images: ['https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=700&q=80'], caption: 'Education support and school supplies for poor children' },
-      { images: ['https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=700&q=80', 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=700&q=80'], caption: 'Mentoring and learning programs for underprivileged children' },
     ],
   },
 ];
@@ -154,7 +109,13 @@ export function Home() {
                     data-bs-interval="3500"
                   >
                     <div className="carousel-indicators">
-                      {[0, 1, 2, 3].map((i) => (
+                      {[
+                        '/images/youth-unity/youth-unity%20(1).jpeg',
+                        '/images/youth-unity/youth-unity%20(2).jpeg',
+                        '/images/youth-unity/youth-unity%20(3).jpeg',
+                        '/images/youth-unity/youth-unity%20(4).jpeg',
+                        '/images/youth-unity/hero-food-5.png',
+                      ].map((_, i) => (
                         <button
                           key={i}
                           type="button"
@@ -166,11 +127,17 @@ export function Home() {
                       ))}
                     </div>
                     <div className="carousel-inner h-100">
-                      {[1, 2, 3, 4].map((n, i) => (
-                        <div key={n} className={`carousel-item h-100 ${i === 0 ? 'active' : ''}`}>
+                      {[
+                        '/images/youth-unity/youth-unity%20(1).jpeg',
+                        '/images/youth-unity/youth-unity%20(2).jpeg',
+                        '/images/youth-unity/youth-unity%20(3).jpeg',
+                        '/images/youth-unity/youth-unity%20(4).jpeg',
+                        '/images/youth-unity/hero-food-5.png',
+                      ].map((src, i) => (
+                        <div key={src} className={`carousel-item h-100 ${i === 0 ? 'active' : ''}`}>
                           <img
-                            src={`/images/youth-unity/youth-unity%20(${n}).jpeg`}
-                            alt={`Youth Unity food distribution activity ${n}`}
+                            src={src}
+                            alt={`Youth Unity food distribution activity ${i + 1}`}
                             className="d-block w-100 h-100"
                             style={{ objectFit: 'contain', objectPosition: 'center', backgroundColor: '#f4f6f8' }}
                           />
@@ -428,6 +395,113 @@ export function Home() {
         </section>
       ))}
 
+      {/* IT Center Empower Project Section */}
+      <section className="section-space" id="it-center" style={{ background: 'linear-gradient(135deg, #f0f9f4 0%, #e8f4fd 100%)' }}>
+        <div className="container">
+
+          {/* Top Header */}
+          <div className="text-center section-header">
+            <div className="section-tag mx-auto">IT Center Empower Project</div>
+            <h2 className="section-heading text-center">Equipping young minds with essential IT skills and digital knowledge.</h2>
+          </div>
+
+          {/* Main Split: Brochure (big) + Info */}
+          <div className="row g-4 align-items-center mt-2">
+
+            {/* LEFT: Big Brochure Image */}
+            <div className="col-lg-5">
+              <div style={{ position: 'relative' }}>
+                <div style={{
+                  position: 'absolute', inset: '-10px', borderRadius: '20px',
+                  background: 'linear-gradient(135deg, var(--ngo-green) 0%, #1a6fa8 100%)',
+                  opacity: 0.15, zIndex: 0,
+                }} />
+                <img
+                  src="/images/it-center/it-empower-6.png"
+                  alt="IT Center Empower Project official brochure"
+                  className="w-100 d-block"
+                  style={{
+                    borderRadius: '16px',
+                    boxShadow: '0 20px 60px rgba(0,0,0,0.18)',
+                    position: 'relative', zIndex: 1,
+                    border: '4px solid #fff',
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* RIGHT: Text + Goals */}
+            <div className="col-lg-7">
+              <p className="section-lead mb-4">
+                Youth Unity Welfare Organization proudly presents the <strong>IT Center Empower Project</strong> — a free initiative
+                to equip young minds with IT skills and digital knowledge, creating pathways to exciting tech careers.
+              </p>
+
+              <div className="d-flex flex-column gap-3">
+                {[
+                  { icon: 'bi-laptop-fill', title: 'Free IT Education & Training', desc: 'Free computer and IT skills training to youth who cannot afford formal education.' },
+                  { icon: 'bi-people-fill', title: 'Community Digital Literacy', desc: 'Empowering communities with essential digital knowledge for everyday life and work.' },
+                  { icon: 'bi-briefcase-fill', title: 'Pathways to Tech Careers', desc: 'Opening doors to professional tech careers through hands-on training and mentorship.' },
+                ].map((goal) => (
+                  <div key={goal.title} className="d-flex align-items-start gap-3 p-3 bg-white rounded-3 shadow-sm">
+                    <div style={{
+                      width: '48px', height: '48px', borderRadius: '12px', flexShrink: 0,
+                      background: 'linear-gradient(135deg, var(--ngo-green), #1a8a4a)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}>
+                      <i className={`bi ${goal.icon} text-white fs-5`}></i>
+                    </div>
+                    <div>
+                      <h6 className="mb-1 fw-bold">{goal.title}</h6>
+                      <p className="mb-0 text-muted small">{goal.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Location & Contact */}
+             
+            </div>
+          </div>
+
+          {/* Activity Photos Grid */}
+          <div className="mt-5">
+            <h5 className="text-center fw-bold mb-4" style={{ color: 'var(--ngo-green)' }}>
+              <i className="bi bi-images me-2"></i>Project in Action
+            </h5>
+            <div className="row g-3">
+              {[
+                { src: '/images/it-center/it-empower-3.png', alt: 'IT Center Empower Project official poster' },
+                { src: '/images/it-center/it-empower-2.png', alt: 'Group learning session' },
+                { src: '/images/it-center/it-empower-1.png', alt: 'IT training session at computer lab' },
+                { src: '/images/it-center/it-empower-4.png', alt: 'IT class in session' },
+                { src: '/images/it-center/it-empower-5.png', alt: 'Instructor teaching digital skills' },
+              ].map((img, i) => (
+                <div className={`col-6 ${i === 0 ? 'col-md-6' : 'col-md-3'}`} key={img.src}>
+                  <div style={{ overflow: 'hidden', borderRadius: '12px', boxShadow: '0 4px 16px rgba(0,0,0,0.10)' }}>
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-100 d-block"
+                      style={{
+                        height: i === 0 ? '280px' : '200px',
+                        objectFit: 'cover',
+                        objectPosition: 'top',
+                        backgroundColor: '#e8f4fd',
+                        transition: 'transform 0.4s ease',
+                      }}
+                      onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.05)')}
+                      onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <section className="section-space bg-soft" id="services">
         <div className="container">
           <div className="text-center section-header">
@@ -440,45 +514,18 @@ export function Home() {
           </div>
 
           <div className="row g-4 mt-2">
-            {serviceCards.slice(0, 4).map((service, idx) => {
-              const carouselId = `svcCarousel${idx}`;
-              const imgs = serviceCarousels[service.title] ?? ['/images/youth-unity/youth-unity%20(35).jpeg'];
-              return (
-                <div className="col-md-6 col-xl-3" key={service.title}>
-                  <div className="service-card h-100" style={{ padding: 0, overflow: 'hidden' }}>
-                    <div id={carouselId} className="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style={{ height: '260px' }}>
-                      <div className="carousel-inner h-100">
-                        {imgs.map((src, i) => (
-                          <div key={i} className={`carousel-item h-100 ${i === 0 ? 'active' : ''}`}>
-                            <img
-                              src={src}
-                              alt={service.title}
-                              style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', backgroundColor: '#f4f6f8', display: 'block' }}
-                            />
-                          </div>
-                        ))}
-                      </div>
-                      <button className="carousel-control-prev" type="button" data-bs-target={`#${carouselId}`} data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                      </button>
-                      <button className="carousel-control-next" type="button" data-bs-target={`#${carouselId}`} data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                      </button>
-                    </div>
-                    <div style={{ padding: '1.5rem' }}>
-                      <ServiceIcon title={service.title} />
-                      <h4>{service.title}</h4>
-                      <p>{service.description}</p>
-                      <Link to="/services" className="service-link">
-                        Learn More <i className="bi bi-arrow-right"></i>
-                      </Link>
-                    </div>
-                  </div>
+            {serviceCards.slice(0, 4).map((service) => (
+              <div className="col-md-6 col-xl-3" key={service.title}>
+                <div className="service-card h-100">
+                  <ServiceIcon title={service.title} />
+                  <h4>{service.title}</h4>
+                  <p>{service.description}</p>
+                  <Link to="/services" className="service-link">
+                    Learn More <i className="bi bi-arrow-right"></i>
+                  </Link>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
           <div className="text-center mt-4">
             <Link to="/services" className="btn btn-primary-ngo">View All Services</Link>
