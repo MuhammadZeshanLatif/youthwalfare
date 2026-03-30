@@ -86,6 +86,9 @@ export function Layout() {
                 <NavLink className="nav-link" to="/services">Services</NavLink>
               </li>
               <li className="nav-item">
+                <NavLink className="nav-link" to="/activities">Activities</NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/team">Team</NavLink>
               </li>
               <li className="nav-item">
@@ -141,6 +144,7 @@ export function Layout() {
                 <li><NavLink to="/">Home</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>
                 <li><NavLink to="/services">Services</NavLink></li>
+                <li><NavLink to="/activities">Activities</NavLink></li>
                 <li><NavLink to="/team">Team</NavLink></li>
                 <li><NavLink to="/faq">FAQ</NavLink></li>
                 <li><NavLink to="/contact">Contact</NavLink></li>

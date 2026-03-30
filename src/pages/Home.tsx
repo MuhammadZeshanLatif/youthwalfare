@@ -13,6 +13,7 @@ import {
   faqItems,
 } from '../data/siteData';
 import donationQrUrl from '@/assets/donation.webp';
+import { activities } from './Activities';
 
 const serviceSections = [
   {
@@ -39,6 +40,28 @@ const serviceSections = [
     ],
   },
 ];
+
+const homeActivities = (() => {
+  const seenGlobal = new Set<string>();
+  return activities
+    .map((act) => {
+      const slides = act.slides
+        .map((slide) => {
+          const seenLocal = new Set<string>();
+          const images = slide.images.filter((src) => {
+            if (seenLocal.has(src) || seenGlobal.has(src)) return false;
+            seenLocal.add(src);
+            seenGlobal.add(src);
+            return true;
+          });
+          return { ...slide, images };
+        })
+        .filter((slide) => slide.images.length > 0);
+
+      return { ...act, slides };
+    })
+    .filter((act) => act.slides.length > 0);
+})();
 
 export function Home() {
   return (
@@ -298,6 +321,52 @@ export function Home() {
         </div>
       </section>
 
+      {/* Activities Highlight Section */}
+      <section className="section-space" id="activities-preview" style={{ background: 'linear-gradient(135deg, #fff8f0 0%, #f0f9f4 100%)' }}>
+        <div className="container">
+          <div className="text-center section-header">
+            <div className="section-tag mx-auto">Our Activities</div>
+            <h2 className="section-heading text-center">Real humanitarian action — from flood relief to volunteer campaigns.</h2>
+            <p className="section-lead text-center mx-auto">
+              See our work in action. From distributing rations to flood victims, running free medical camps,
+              mobilizing hundreds of volunteers, cleaning community graveyards, and running awareness campaigns —
+              every activity is a testament to Youth Unity's commitment to serve.
+            </p>
+          </div>
+
+          <div className="row g-4 mt-2">
+            {[
+              { icon: 'bi-people-fill', color: '#2e7d32', title: 'Volunteer Activities', desc: 'Hundreds of dedicated youth volunteers serving communities on the ground.', count: '69+ Photos', id: 'act-volunteer' },
+              { icon: 'bi-box-seam-fill', color: '#1565c0', title: 'Flood Rashan Campaign', desc: 'Emergency dry ration packs distributed to flood-affected families.', count: '11 Photos', id: 'act-flood-rashan' },
+              { icon: 'bi-hospital-fill', color: '#c62828', title: 'Flood Relief Medical Camp', desc: 'Free medical consultations and medicines for flood disaster victims.', count: '9 Photos', id: 'act-flood-medical' },
+              { icon: 'bi-tree-fill', color: '#558b2f', title: 'Graveyard Clean Campaign', desc: 'Community graveyard restoration drives led by dedicated volunteers.', count: '5 Photos', id: 'act-graveyard' },
+              { icon: 'bi-megaphone-fill', color: '#e65100', title: 'Awareness Campaigns', desc: 'Public displays and banners spreading welfare and humanitarian messages.', count: '12 Photos', id: 'act-display' },
+            ].map((item) => (
+              <div className="col-sm-6 col-xl-4" key={item.id}>
+                <Link to={`/activities#${item.id}`} className="text-decoration-none" style={{ display: 'block', height: '100%' }}>
+                  <div className="value-card h-100" style={{ borderLeft: `4px solid ${item.color}`, transition: 'transform 0.2s' }}>
+                    <span className="icon-badge">
+                      <i className={`bi ${item.icon}`} style={{ color: item.color }}></i>
+                    </span>
+                    <h4 style={{ color: item.color }}>{item.title}</h4>
+                    <p>{item.desc}</p>
+                    <span className="badge rounded-pill px-3 py-2" style={{ backgroundColor: `${item.color}15`, color: item.color, fontSize: '0.82rem' }}>
+                      <i className="bi bi-images me-1"></i>{item.count}
+                    </span>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-5">
+            <Link to="/activities" className="btn btn-primary-ngo btn-lg">
+              <i className="bi bi-images me-2"></i>View All Activities &amp; Photos
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section-space bg-soft" id="impact">
         <div className="container">
           <div className="text-center section-header">
@@ -394,6 +463,109 @@ export function Home() {
           </div>
         </section>
       ))}
+
+      {/* All Activities sections on Home */}
+      {homeActivities.map((act) => {
+        return (
+          <section key={`home-${act.id}`} className={`section-space${act.bgSoft ? ' bg-soft' : ''}`}>
+            <div className="container">
+              <div className="text-center section-header">
+                <h2 className="section-heading text-center">{act.heading}</h2>
+                <p className="section-lead text-center mx-auto">{act.description}</p>
+              </div>
+
+              <div
+                id={`home-${act.id}-carousel`}
+                className="carousel slide mt-4"
+                data-bs-ride="carousel"
+                data-bs-interval="4500"
+              >
+                <div className="carousel-indicators">
+                  {act.slides.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      data-bs-target={`#home-${act.id}-carousel`}
+                      data-bs-slide-to={i}
+                      className={i === 0 ? 'active' : ''}
+                      aria-label={`Slide ${i + 1}`}
+                      style={{ backgroundColor: act.color }}
+                    />
+                  ))}
+                </div>
+
+                <div className="carousel-inner">
+                  {act.slides.map((slide, i) => (
+                    <div key={i} className={`carousel-item ${i === 0 ? 'active' : ''}`}>
+                      <div className="row g-3 justify-content-center">
+                        {slide.images.map((src) => (
+                          <div key={src} className={`col-12 ${slide.images.length === 2 ? 'col-md-6' : 'col-md-4'}`}>
+                            <div
+                              style={{
+                                borderRadius: '12px',
+                                overflow: 'hidden',
+                                boxShadow: '0 4px 20px rgba(0,0,0,0.10)',
+                                border: `2px solid ${act.color}20`,
+                              }}
+                            >
+                              <img
+                                src={src}
+                                alt={act.tag}
+                                className="d-block w-100"
+                                style={{
+                                  height: '320px',
+                                  objectFit: 'cover',
+                                  objectPosition: 'center',
+                                  backgroundColor: '#f4f6f8',
+                                }}
+                              />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="text-center mt-3">
+                        <p className="text-muted mb-0">
+                          <i className="bi bi-geo-alt-fill me-1" style={{ color: act.color }}></i>
+                          {slide.caption}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <button
+                  className="carousel-control-prev"
+                  type="button"
+                  data-bs-target={`#home-${act.id}-carousel`}
+                  data-bs-slide="prev"
+                  style={{ width: '40px', left: '-50px' }}
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    style={{ filter: 'invert(1) sepia(1) saturate(5) hue-rotate(175deg)' }}
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button
+                  className="carousel-control-next"
+                  type="button"
+                  data-bs-target={`#home-${act.id}-carousel`}
+                  data-bs-slide="next"
+                  style={{ width: '40px', right: '-50px' }}
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    style={{ filter: 'invert(1) sepia(1) saturate(5) hue-rotate(175deg)' }}
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </section>
+        );
+      })}
 
       {/* IT Center Empower Project Section */}
       <section className="section-space" id="it-center" style={{ background: 'linear-gradient(135deg, #f0f9f4 0%, #e8f4fd 100%)' }}>
@@ -570,7 +742,7 @@ export function Home() {
                     ) : (
                       <div className="d-flex justify-content-between align-items-center">
                         <strong>{cause.progress}% Funded</strong>
-                        <Link to="/contact" className="btn btn-sm btn-primary-ngo">Support Cause</Link>
+                        <Link to="/contact" className="btn btn-sm btn-primary-ngo">Donate Now. Feed the childrens.</Link>
                       </div>
                     )}
                   </div>
